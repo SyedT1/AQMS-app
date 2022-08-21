@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{ 
+        color:red;
+        text-align:center;
+        background-color:black;
+    }
+    img{
+        size:200px;
+    }
+    p{
+        text-align:center;
+        font-size:30px;
+    }
+    .center{
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        width:600px;
+    }
+    button{
+        background-color: white;
+    }
+</style>
+<body>
+    <h1>
+        Air Quality Monitoring System
+    </h1>
+    <p style="color:brown;"> Shit heads don't care about nature.</p>
+
+    <p style="color:crimson;">"Spongebob reacts to smell"</p>
+    <img class=center src="https://static.tvtropes.org/pmwiki/pub/images/spongebob_funnewr_110.jpg" alt="nothing">
+    <h3 style="text-align:center;font-size:100px;" onclick="somefunction(this,random_color(Math.floor(Math.random() * 6)))">
+        Click me to see different colors
+    </h3>
+    <script>
+        function random_color(num){
+            const colors = ['blue','yellow','green','red','black','brown','violet'];
+            if(num-1<0){
+                num++;
+            }
+            return colors[num-1];
+        }
+        function somefunction(element,color){
+            element.style.color = color;
+        }
+    </script>
+
+
+</body>
+</html>
