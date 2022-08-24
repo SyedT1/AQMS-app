@@ -1,12 +1,6 @@
-# TestRepo
-For sharing files
+# Air Quality Monitoring System
 
-# YOHOHOH
-![Spongebob](https://m.media-amazon.com/images/M/MV5BNDUwNjBkMmUtZjM2My00NmM4LTlmOWQtNWE5YTdmN2Y2MTgxXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_.jpg)
+# AQMS 
+![Spongebob](https://www.rpsgroup.com/media/2484/air-quality-1600x1000.jpg?anchor=center&mode=crop&width=1200&height=630&rnd=131915165990000000)
 
-
-
-# List of items
-+ Kaj number 1
-+ Kaj number 2
-+ Kaj number 3
+# Report
