@@ -6,7 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add data</title>
 </head>
+<style>
+    select {
+        display: block;
+        margin: 0 auto;
+    }
+</style>
 <body>
-    <h1>Adding data here</h1>
+    <h1 style="text-align:center;background-color:black;color:aliceblue;font-size:100px;"> Add AQI Form </h1>
+    <form style="text-align:center;">
+        <label style="text-align:center;font-size:30px;" for="fname">First name:</label><br>
+        <input style="text-align:center;font-size:30px;" type="text" id="fname" name="fname"><br>
+        <label style="text-align:center;font-size:30px;" for="lname">Last name:</label><br>
+        <input style="text-align:center;font-size:30px;" type="text" id="lname" name="lname">
+      </form>
+      <!-- <label style="text-align:center;font-size:30px;" for="division">Choose a Division:</label>
+      <select style="text-align:center;font-size:30px;" id="division" name="div-sion">
+        <option style="text-align:center;font-size:30px;" value="Dhaka">Dhaka</option>
+        <option style="text-align:center;font-size:30px;" value="Khulna">Khulna</option>
+        <option style="text-align:center;font-size:30px;" value="Rangpur">Rangpur</option>
+        <option style="text-align:center;font-size:30px;" value="Chittagong">Chittagong</option>
+        <option style="text-align:center;font-size:30px;" value="Mymensingh">Mymensingh</option>
+        <option style="text-align:center;font-size:30px;" value="Sylhet">Sylhet</option>
+        <option style="text-align:center;font-size:30px;" value="Rajshahi">Rajshahi</option>
+        <option style="text-align:center;font-size:30px;" value="Barisal">Barisal</option>
+      </select> -->
+      <form action="{% url 'addAQI-load' %}">
+        <select style="text-align:center;font-size:30px;" name="division">
+            <option style="text-align:center;font-size:30px;" value="Dhaka">Dhaka</option>
+            <option style="text-align:center;font-size:30px;" value="Khulna">Khulna</option>
+            <option style="text-align:center;font-size:30px;" value="Rangpur">Rangpur</option>
+            <option style="text-align:center;font-size:30px;" value="Chittagong">Chittagong</option>
+            <option style="text-align:center;font-size:30px;" value="Mymensingh">Mymensingh</option>
+            <option style="text-align:center;font-size:30px;" value="Sylhet">Sylhet</option>
+            <option style="text-align:center;font-size:30px;" value="Rajshahi">Rajshahi</option>
+            <option style="text-align:center;font-size:30px;" value="Barisal">Barisal</option>
+        <input style="width:200px;" type="submit" value="click">
+    </form>
 </body>
 </html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+h1 {
+  text-align: center;
+}
+
+</style>
+
+<style>
+    * {box-sizing: border-box}
+    body {font-family: Verdana, sans-serif; margin:0}
+    .mySlides {display: none}
+    img {vertical-align: middle;}
+    
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+    
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 50px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+    
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
+
+    .table2 {
+       position:absolute;
+       margin-left: 15%;
+    }
+    .custom-select {
+      position: relative;
+      font-family: Arial;
+    }
+    
+    .custom-select select {
+      display: none; /*hide original SELECT element: */
+    }
+    .my-info {
+      border-collapse: collapse;
+    }
+    
+    .bottom-border {
+      border-bottom: 1px dashed black;
+    }
+    img {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+      width: 150px;
+    }
+    
+    img:hover {
+      box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    }
+    .center {
+      margin-left: 15%;
+      margin-right: 50%;
+    }
+    .container {
+      position: relative;
+    }
+    
+    /* Bottom right text */
+    .text-block {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: black;
+      color: white;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .topright {
+      position: absolute;
+      top: 70px;
+      right: 16px;
+      font-size: 20px;
+    }
+    
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button class="topright" >Login</button>
+    <h1 style="color:white;text-align:center;background-color:black;"> AQMS - developed by Integrated Mind Herd</h1>
+    <table style="width:99%; border: 1px solid black">
+        <tr>
+            <td style="vertical-align:top">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#">Add AQI data by form</a>
+                    <a href="#">Add Route AQI data by form</a>
+                    <a href="#">Add AQI data by CSV</a>
+                    <a href="#">Add AQI data by CSV</a>
+                    <a href="#">Give feedback</a>
+                    <a href="#">Get Report</a>
+                  </div>
+                  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Admin </span>
+
+            </td>
+            <td>
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                      <div class="numbertext">1 / 3</div>
+                      <img src="https://cdn-cenii.nitrocdn.com/dxZQGVjeOyXblsYkcsxiHEoJOLKUvtcl/assets/static/optimized/rev-76960c4/wp-content/uploads/2019/07/air-pollution-1000x500.jpeg" style="width:100%">
+                      <div class="text">Get the most accurate AQI data</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">2 / 3</div>
+                      <img src="https://www.landmarkacademyhub.co.uk/wp-content/uploads/2020/04/Air-quality-and-coronavirus-1000x500.jpg" style="width:100%">
+                      <div class="text">of all the divisions of Bangladesh</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">3 / 3</div>
+                      <img src="https://victor-mochere.com/wp-content/uploads/2021/11/Top-20-most-polluted-countries-in-the-world.jpg" style="width:100%">
+                      <div style="color:red;" class="text"><strong>From our AQMS website</strong></div>
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                    
+                    </div>
+
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span> 
+                        <span class="dot" onclick="currentSlide(2)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span> 
+                      </div>
+            </td>
+        </tr>
+    </table>
+
+    <h2 style="text-align:center;"> Latest Updated AQI data for {{division}} Division is of Date: {{time}} </h2>
+    <div class="table2">
+        <table class="center" style="background-color:white;width:99%; border: 1px solid black">
+            <tr>
+                <td >
+                  <select style="font-size:large;" name="division" id="division">
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Khulna">Khulna</option>
+                    <option value="Barisal">Barisal</option>
+                    <option value="Sylhet">Sylhet</option>
+                    <option value="Mymensingh">Mymensingh</option>
+                    <option value="Chittagong">Chittagong</option>
+                    <option value="Rangpur">Rangpur</option>
+                    <option value="Rajshahi">Rajshahi</option>
+                </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h3 style="color:black;background:purple;text-align:center;">Air pollution Level</h3>
+                </td>
+                <td>
+                    <h3 style="color:black;background:purple;text-align:center;">
+                        Air quality index
+                    </h3>
+                </td>
+                <td>
+                    <h3 style="color:black;background:purple;text-align:center;">
+                        Main pollutant
+                    </h3>
+                  
+                </td>
+                
+            </tr>
+    
+            <tr>
+                <td>
+                    <p style="text-align:center;" id="aplId"> 3.3</p>
+                </td>
+                <td>
+                    <p style="text-align:center;" id="aqiId">
+                      {{PM25}}
+                    </p>
+                </td>
+                <td>
+                    <p style="text-align:center;" id="mpId">
+                      PM2.5
+                    </p>
+                </td>
+                
+            </tr>
+        </table>
+        <br>
+
+        <div class="table3">
+          <table class="center" style="background-color:red;width:99%; border: 1px solid black">
+  
+              <tr>
+                 
+                  <td>
+                      <h3 style="color:black;background:green;text-align:center;">
+                          Avg Temp
+                      </h3>
+                  </td>
+                  <td>
+                      <h3 style="color:black;background:green;text-align:center;">
+                          Rain Precip.
+                      </h3>
+                    
+                  </td>
+                  <td>
+                    <h3 style="color:black;background:green;text-align:center;">Wind Speed</h3>
+                </td>
+                  
+              </tr>
+      
+              <tr>
+                  
+                  <td>
+                      <p style="text-align:center;" id="avg_temp">
+                        {{avg_temp}}
+                      </p>
+                  </td>
+                  <td>
+                      <p style="text-align:center;" id="rain_precp">
+                        {{rain_precp}}
+                      </p>
+                  </td>
+                  <td>
+                    <p style="text-align:center;" id="wind_spd_id"> {{wind_spd}} </p>
+                </td>
+                  
+              </tr>
+          </table>
+          <div class="table4">
+            <table class="center" style="background-color:red;width:99%; border: 1px solid black">
+                <tr>
+                    <td>
+                        <h3 style="color:black;background:green;text-align:center;">
+                            Visibility
+                        </h3>
+                    </td>
+                    <td>
+                        <h3 style="color:black;background:green;text-align:center;">
+                            Cloud Cover
+                        </h3>
+                      
+                    </td>
+                    <td>
+                      <h3 style="color:black;background:green;text-align:center;">
+                          Rela Humid.
+                      </h3>
+                    
+                  </td>
+                    
+                </tr>
+        
+                <tr>
+                    <td>
+                        <p style="text-align:center;" id="visibility_id">
+                          {{visibility}}
+                        </p>
+                    </td>
+                    <td>
+                        <p style="text-align:center;" id="cloud_cov_id">
+                            {{cloud_cov}}
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align:center;" id="rela_hum_id">
+                          {{rela_hum}}
+                      </p>
+                  </td>
+                    
+                </tr>
+            </table>
+            <br><br>
+        <h1 style="font-family:'Roboto'">Click the following links to load charts for comparative analysis(Linechart , Boxplot , scatterplot , 
+          routewise)</h1>
+        <div class="container">
+          <a href="https://www.w3schools.com/howto/howto_css_table_center.asp"><img src="https://raw.githubusercontent.com/SyedT1/TestRepo/main/app/loadchart/templates/loadchart/Screenshot_64.png" alt="Chart-Comparative-Analysis" style="width: 100%;"></a>
+          <div class="text-block">
+           <h1>Click Here to view scatter chart </h1>
+           <p> Scatter plots of different organization </p>
+          </div>
+        </div>
+        <div class="container">
+          <a href="https://www.w3schools.com/howto/howto_css_table_center.asp"><img src="https://github.com/SyedT1/TestRepo/blob/main/app/loadchart/templates/loadchart/Screenshot_65.png?raw=true" alt="Line Chart" style="width:100%;"></a>
+          <div class="text-block">
+           <h1 style="text-align:center;">Click Here to view line chart </h1>
+           <p style="text-align:center;"> Time based division wise </p>
+          </div>
+        </div>
+    </div>
+    
+   
+
+    
+
+
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+    
+    <form action="PageObjects" method="post">
+      <select >
+        <option selected="selected" disabled>Objects on page:</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+      </select>
+      <input type="submit" value="Select">
+    </form>
+</body>
+</html> 
